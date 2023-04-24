@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <input type="email" name="uemail" id="uemail" placeholder="Enter Your Email Address" required>
+        <input type="password" name="upass" id="upass" placeholder="Enter Your password" required>
+        <button type="submit">Login</button>
+    </form> <br>
+
+    <form action="/register" method="post">
+        <input type="text" name="uname" id="uname" placeholder="Enter Your Full Name" required>
+        <input type="email" name="uemail" id="uemail" placeholder="Enter Your Email Id" required>
+        <input type="text" name="pnumber" id="pnumber" placeholder="Enter Your Phone Number " required>
+        <input type="password" name="upass" id="upass" placeholder="Enter Your password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    {{msg}}
+    
+</body>
+</html>
