@@ -6,7 +6,7 @@ from ibm_botocore.client import Config, ClientError
 app = Flask(__name__)
 app.secret_key = 'something'
 
-conn =  ibm_db.connect("database = bludb; hostname = 2f3279a5-73d1-4859-88f0-a6c3e6b4b907.c3n41cmd0nqnrk39u98g.databases.appdomain.cloud; port = 30756; uid = vts47207; password = g4O8mWodzytk1wMD; security = SSL; sslcertificate = DigiCertGlobalRootCA.crt", " ", " ")
+conn =  ibm_db.connect("database = bludb; hostname = <Enter Your Host Name >; port = <Enter your port name>; uid = <Enter Your Username>; password = <Enter Your Password>; security = SSL; sslcertificate = DigiCertGlobalRootCA.crt", " ", " ")
 print("connection succesfull")
 @app.route("/")
 def index():
@@ -98,7 +98,7 @@ def file():
     fname = f.filename
     f.save(fname)
     COS_ENDPOINT = "https://s3.us-south.cloud-object-storage.appdomain.cloud"
-    COS_API_KEY_ID = "feQ_YXP6d0HktdnQwEH6YFh545ZpgacGGQJkguFhthrb"
+    COS_API_KEY_ID = "<Enter your Clouds Object Storage API Key>"
     COS_INSTANCE_CRN = "crn:v1:bluemix:public:cloud-object-storage:global:a/2396b07efb5e497894432383c651d668:2883dbef-d638-4e0a-922e-2ad686a7ad08:bucket:course-b1"
     cos = ibm_boto3.client("s3", ibm_api_key_id = COS_API_KEY_ID, ibm_service_instance_id = COS_INSTANCE_CRN, endpoint_url = COS_ENDPOINT, config = Config(signature_version='oauth') )
     cos.upload_file(Filename = fname, Bucket = "course-b1", Key = fname )
