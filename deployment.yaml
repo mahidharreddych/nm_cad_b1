@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: course-app
+ labels:
+   app: course
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: course
+ template:
+   metadata:
+     labels:
+       app: course
+   spec:
+     containers:
+     - name: course-app
+       image: au.icr.io/course2/course_app:2.0
+       ports:
+       - containerPort: 5000
+
+

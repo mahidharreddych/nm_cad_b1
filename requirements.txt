@@ -1,0 +1,8 @@
+flask
+ibm_db
+ibm-cos-sdk
+boto3
+ibm-cos-sdk-core
+ibm-cos-sdk-s3transfer
+
+requests
